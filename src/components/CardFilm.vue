@@ -9,6 +9,10 @@
                 <p>Language:{{ film.original_language }}</p>
                 <p>Status:{{ film.status }}</p>
                 <p>Rating:{{ film.vote_average }}</p>
+                <span  v-for="(star, i) in this.stars">
+                  <font-awesome-icon v-if="star <= film.vote_average / 2" icon="fa-solid fa-star" />
+                  <font-awesome-icon v-else icon="fa-regular fa-star" />
+               </span>
             </div>
         </div>
     <!-- </div> -->
@@ -26,6 +30,7 @@ export default {
     data() {
         return {
             store,
+            stars:[1,2,3,4,5]
         }
     },
 }

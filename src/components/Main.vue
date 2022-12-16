@@ -1,4 +1,6 @@
 <template>
+<Suspense>
+<template #default>
     <div class="container">
         <!-- <h2 v-if="container.display">Films:</h2> -->
         <h2>Films:</h2>
@@ -13,9 +15,15 @@
                 <SeriesCard :serie="series"></SeriesCard>
             </div>
         </div>
-    </div>
-    
+    </div>    
 </template>
+<template #fallback>
+    Loading...
+</template>
+</Suspense>
+</template>
+
+
 
 <script>
     import { store } from "../store";

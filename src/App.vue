@@ -27,6 +27,7 @@ export default {
  <Main></Main>
 </template>
 
+
 <style lang="scss">
 
 </style>

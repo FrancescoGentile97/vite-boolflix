@@ -6,6 +6,10 @@
                 <h2>Title:{{ serie.name }}</h2>
                 <p>Language:{{ serie.original_language }}</p>
                 <p>Rating:{{ serie.vote_average }}</p>
+               <span  v-for="(star, i) in this.stars">
+                 <font-awesome-icon v-if="star <= serie.vote_average / 2" icon="fa-solid fa-star" />
+                 <font-awesome-icon v-else icon="fa-regular fa-star" />
+               </span>
             </div>
         </div>
 </template>
@@ -22,7 +26,9 @@ export default {
     data() {
         return {
             store,
+            stars:[1,2,3,4,5],
         }
+       
     },
 }
 
